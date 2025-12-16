@@ -1,13 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/Hero';
+import IncubationBanner from '@/components/sections/IncubationBanner';
+import WhyMatters from '@/components/sections/WhyMatters';
+import AutonomousDock from '@/components/sections/AutonomousDock';
+import HowItWorks from '@/components/sections/HowItWorks';
+import KeyAdvantages from '@/components/sections/KeyAdvantages';
+import About from '@/components/sections/About';
+import VisionMissionAim from '@/components/sections/VisionMissionAim';
+import CoreTeam from '@/components/sections/CoreTeam';
+import Advisors from '@/components/sections/Advisors';
+import Careers from '@/components/sections/Careers';
+import Contact from '@/components/sections/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background">
+      <Navigation />
+      <Hero />
+      <IncubationBanner />
+      <WhyMatters />
+      <AutonomousDock />
+      <HowItWorks />
+      <KeyAdvantages />
+      <About />
+      <VisionMissionAim />
+      <CoreTeam />
+      <Advisors />
+      <Careers />
+      <Contact />
+      <Footer />
+    </main>
   );
 };
 
