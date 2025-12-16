@@ -32,7 +32,7 @@ const Navigation = () => {
           {/* Logo */}
         <a href="/" className="flex items-center">
   <img
-    src="https://uexhvdjarllzpmbxfplh.supabase.co/storage/v1/object/public/product-images/iotronix/big%20logo%20for%20website%202.png"
+    src="/logo.png"
     alt="Grape UAV"
     className="h-20 md:h-20 w-auto "
   />
