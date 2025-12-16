@@ -5,17 +5,21 @@ const About = () => {
     <section id="about" className="relative py-24 md:py-32 overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        >
-          <source src="/grapelogo.mp4" type="video/mp4" />
-        </video>
-        <div className="video-overlay-subtle" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
+     <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  className="absolute inset-0 w-full h-full object-cover opacity-30"
+>
+  <source src="/grapelogo.mp4" type="video/mp4" />
+</video>
+
+<div className="absolute inset-0 bg-black/35" />
+
+        {/* <div className="video-overlay-subtle" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" /> */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">

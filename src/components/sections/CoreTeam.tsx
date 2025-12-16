@@ -7,14 +7,10 @@ const CoreTeam = () => {
       role: 'Co-Founder',
       bio: 'Leading hardware and systems integration.',
     },
-    {
-      name: 'Anusika Das',
-      role: 'Co-Founder',
-      bio: 'Driving product development and engineering.',
-    },
+   
     {
       name: 'Shreyansh Ray',
-      role: 'Head of Corporate Relations',
+      role: 'Head of Corporate Relations and Operations',
       bio: 'Building strategic partnerships and business development.',
     },
   ];

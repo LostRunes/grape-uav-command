@@ -1,9 +1,10 @@
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 
 interface HoverCardProps {
   title: string;
   description: string;
   image?: string;
+  videoSrc?: string; // 🆕 ADDED
   className?: string;
 }
 
@@ -19,7 +20,7 @@ const JumbleText = ({ text, isVisible }: { text: string; isVisible: boolean }) =
 
     let iteration = 0;
     const interval = setInterval(() => {
-      setDisplayText((prev) =>
+      setDisplayText(() =>
         text
           .split('')
           .map((char, index) => {
@@ -30,11 +31,8 @@ const JumbleText = ({ text, isVisible }: { text: string; isVisible: boolean }) =
           .join('')
       );
 
-      if (iteration >= text.length) {
-        clearInterval(interval);
-      }
-
-      iteration += 1 / 2;
+      if (iteration >= text.length) clearInterval(interval);
+      iteration += 0.5;
     }, 25);
 
     return () => clearInterval(interval);
@@ -43,38 +41,55 @@ const JumbleText = ({ text, isVisible }: { text: string; isVisible: boolean }) =
   return <span>{displayText}</span>;
 };
 
-const HoverCard = ({ title, description, image, className = '' }: HoverCardProps) => {
+const HoverCard = ({
+  title,
+  description,
+  image,
+  videoSrc, // 🆕 ADDED
+  className = '',
+}: HoverCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className={`hover-card-container group relative aspect-[4/3] bg-card overflow-hidden ${className}`}
+      className={`hover-card-container group relative overflow-hidden ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Background Image */}
-      {image && (
+      {/* ================= BACKGROUND VIDEO ================= */}
+      {videoSrc && (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover opacity-40" // 🔹 CHANGED
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      )}
+
+      {/* ================= FALLBACK IMAGE ================= */}
+      {!videoSrc && image && (
         <div
-          className="card-image absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${image})` }}
         />
       )}
-      
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-      
-      {/* Content */}
-      <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
-        {/* Title */}
-        <h3 className="card-title text-xl md:text-2xl font-semibold text-foreground mb-2">
+
+      {/* ================= OVERLAY ================= */}
+      <div className="absolute inset-0 bg-black/30" /> {/* 🔹 CHANGED (simpler overlay) */}
+
+      {/* ================= CONTENT ================= */}
+      <div className="relative z-10 h-full p-6 md:p-8 flex flex-col justify-end">
+        <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
           {title}
         </h3>
-        
-        {/* Green Line */}
+
         <div className="card-line mb-3" />
-        
-        {/* Description - reveals on hover */}
-        <p className="card-description text-sm md:text-base text-muted-foreground leading-relaxed">
+
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
           <JumbleText text={description} isVisible={isHovered} />
         </p>
       </div>

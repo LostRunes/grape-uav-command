@@ -24,14 +24,10 @@ const Careers = () => {
           </ScrollReveal>
           
           <ScrollReveal delay={300}>
-            <a
-              href="https://notion.so"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex"
-            >
-              View Open Roles
-            </a>
+         <a href="/careers/open-roles" className="btn-primary inline-flex">
+  View Open Roles
+</a>
+
           </ScrollReveal>
         </div>
       </div>

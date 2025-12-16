@@ -311,3 +311,43 @@
   @apply inline-block opacity-0;
   animation: text-reveal 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.hero-stroke-text {
+  fill: transparent;
+  stroke: rgba(74, 222, 128, 0.9); /* subtle green, NOT glow */
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+
+  font-size: 96px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: stroke-trace 6s linear infinite;
+}
+
+.hero-stroke-text--large {
+  font-size: 140px;
+  stroke-width: 2.5;
+}
+
+@keyframes stroke-trace {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
