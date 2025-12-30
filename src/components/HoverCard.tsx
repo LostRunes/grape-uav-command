@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ScrollReveal from './ScrollReveal';
 
 interface HoverCardProps {
   title: string;
@@ -82,15 +83,19 @@ const HoverCard = ({
       <div className="absolute inset-0 bg-black/30" /> {/* 🔹 CHANGED (simpler overlay) */}
 
       {/* ================= CONTENT ================= */}
+
+      
       <div className="relative z-10 h-full p-6 md:p-8 flex flex-col justify-end">
         <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
-          {title}
+          
+          <JumbleText text={title} isVisible={isHovered} />
         </h3>
 
         <div className="card-line mb-3" />
 
         <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-          <JumbleText text={description} isVisible={isHovered} />
+          {description}
+          {/* <JumbleText text={description} isVisible={isHovered} /> */}
         </p>
       </div>
     </div>

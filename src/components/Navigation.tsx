@@ -13,13 +13,22 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // const navLinks = [
+  //   { label: 'Technology', href: '#dock' },
+  //   { label: 'About', href: '#about' }, #- scroll 
+  //   { label: 'Team', href: '#team' },
+  //   { label: 'Careers', href: '#careers' },
+  //   { label: 'Contact', href: '#contact' },
+  // ];
+
   const navLinks = [
-    { label: 'Technology', href: '#dock' },
-    { label: 'About', href: '#about' },
-    { label: 'Team', href: '#team' },
-    { label: 'Careers', href: '#careers' },
-    { label: 'Contact', href: '#contact' },
-  ];
+  { label: 'Technology', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Team', href: '/team' },
+  { label: 'Careers', href: '/careers' }, // /-pge
+  { label: 'Contact', href: '/contact' }, // optional
+];
+
 
   return (
     <nav
