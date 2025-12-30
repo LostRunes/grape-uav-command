@@ -60,7 +60,7 @@ const About = () => {
             <div className="mt-12 pt-8 border-t border-border/30">
               <div className="flex flex-wrap gap-12 md:gap-20">
                 <div>
-                  <span className="text-3xl md:text-4xl font-bold text-primary">2023</span>
+                  <span className="text-3xl md:text-4xl font-bold text-primary">2025</span>
                   <p className="text-sm text-muted-foreground mt-1">Founded</p>
                 </div>
                 <div>

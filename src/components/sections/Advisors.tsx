@@ -2,21 +2,27 @@ import ScrollReveal from '../ScrollReveal';
 
 const Advisors = () => {
   const advisors = [
-    {
-      name: 'Advisory Board Member',
-      role: 'Strategic Advisor',
-      description: 'Providing guidance on defence sector partnerships and government relations.',
-    },
-    {
-      name: 'Advisory Board Member',
-      role: 'Technical Advisor',
-      description: 'Supporting R&D strategy and technology roadmap development.',
-    },
-    {
-      name: 'Advisory Board Member',
-      role: 'Industry Advisor',
-      description: 'Advising on market entry and enterprise sales strategy.',
-    },
+   {
+  name: 'Dr. Suman Bhattacharya',
+  role: 'AI SYSTEMS ADVISOR',
+  description: 'Advising on AI-driven autonomy, intelligent perception systems, and integration of advanced analytics into UAV platforms.',
+},
+{
+  name: 'Brig. Kshirod Kumar Nayak',
+  role: 'DEFENCE ADVISOR',
+  description: 'Providing strategic guidance on defence operations, military requirements, and alignment with national security objectives.',
+},
+{
+  name: 'Dr. Nitin Sharma',
+  role: 'MECHANICAL SYSTEMS ADVISOR',
+  description: 'Guiding mechanical design, structural integrity, and system-level optimization for reliable UAV performance.',
+},
+{
+  name: 'Dr. Upali Aparajita Dash',
+  role: 'WIRELESS SYSTEM ADVISOR',
+  description: 'Advising on wireless communication systems, secure data links, and robust connectivity for mission-critical operations.',
+}
+
   ];
 
   return (
