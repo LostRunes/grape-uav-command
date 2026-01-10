@@ -1,19 +1,23 @@
 import ScrollReveal from '../ScrollReveal';
 
+
+ 
 const CoreTeam = () => {
-  const team = [
-    {
-      name: 'Santrupta Mishra',
-      role: 'Co-Founder',
-      bio: 'Leading hardware and systems integration.',
-    },
-   
-    {
-      name: 'Shreyansh Ray',
-      role: 'Head of Corporate Relations and Operations',
-      bio: 'Building strategic partnerships and business development.',
-    },
-  ];
+const team = [
+  {
+    name: 'Santrupta Mishra',
+    role: 'Co-Founder',
+    bio: 'Leading hardware and systems integration.',
+    image: '/team/santrupta.jpeg',
+  },
+  {
+    name: 'Shreyansh Ray',
+    role: 'Head of Corporate Relations and Operations',
+    bio: 'Building strategic partnerships and business development.',
+    image: '/team/shreyansh.jpeg',
+  },
+];
+
 
   return (
     <section id="team" className="py-24 md:py-32 bg-secondary/20">
@@ -33,13 +37,29 @@ const CoreTeam = () => {
             <ScrollReveal key={member.name} delay={200 + index * 100}>
               <div className="group">
                 {/* Portrait Placeholder */}
-                <div className="aspect-[3/4] bg-card border border-border/30 mb-6 overflow-hidden">
+                {/* <div className="aspect-[3/4] bg-card border border-border/30 mb-6 overflow-hidden">
                   <div className="w-full h-full bg-gradient-to-br from-muted to-card flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                     <span className="text-6xl font-bold text-border/30">
                       {member.name.charAt(0)}
                     </span>
                   </div>
-                </div>
+                </div> */}
+                <div className="aspect-[3/4] bg-card border border-border/30 mb-6 overflow-hidden">
+  {member.image ? (
+    <img
+      src={member.image}
+      alt={member.name}
+      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+  ) : (
+    <div className="w-full h-full bg-gradient-to-br from-muted to-card flex items-center justify-center">
+      <span className="text-6xl font-bold text-border/30">
+        {member.name.charAt(0)}
+      </span>
+    </div>
+  )}
+</div>
+
                 
                 {/* Info */}
                 <h3 className="text-xl font-semibold text-foreground mb-1">

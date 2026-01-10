@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
+/* 🔹 NEW: import glass-nav components */
+import NavItem from './navigation/NavItem';
+import CompanyDropdown from './navigation/CompanyDropdown';
+import TeamDropdown from './navigation/TeamDropdown';
+import CareersDropdown from './navigation/CareersDropdown';
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,51 +19,54 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // const navLinks = [
-  //   { label: 'Technology', href: '#dock' },
-  //   { label: 'About', href: '#about' }, #- scroll 
-  //   { label: 'Team', href: '#team' },
-  //   { label: 'Careers', href: '#careers' },
-  //   { label: 'Contact', href: '#contact' },
-  // ];
-
-  const navLinks = [
-  { label: 'Technology', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Team', href: '/team' },
-  { label: 'Careers', href: '/careers' }, // /-pge
-  { label: 'Contact', href: '/contact' }, // optional
-];
-
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border/30' : 'bg-transparent'
+        isScrolled
+          ? 'bg-background/95 backdrop-blur-sm border-b border-border/30'
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20 md:h-24">
+          
           {/* Logo */}
-        <a href="/" className="flex items-center">
-  <img
-    src="/logo.png"
-    alt="Grape UAV"
-    className="h-20 md:h-20 w-auto "
-  />
-</a>
+          <a href="/" className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="Grape UAV"
+              className="h-20 md:h-13 w-auto"
+            />
+          </a>
 
-
-          {/* Desktop Navigation */}
+          {/* ===================== DESKTOP NAV ===================== */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a key={link.label} href={link.href} className="nav-link text-sm uppercase tracking-wider">
-                {link.label}
-              </a>
-            ))}
+           
+ <NavItem label="Technology" href="/" />
+
+
+            {/* 🔹 CHANGED: About → glass dropdown */}
+            <NavItem label="About">
+              <CompanyDropdown />
+            </NavItem>
+
+            {/* 🔹 CHANGED: Team → glass dropdown */}
+            <NavItem label="Team">
+              <TeamDropdown />
+            </NavItem>
+
+             <NavItem label="Careers">
+              <CareersDropdown />
+            </NavItem>
+
+            {/* 🔹 NORMAL links stay simple */}
+           
+            {/* <NavItem label="Careers" href="/careers" /> */}
+            <NavItem label="Contact" href="/contact" />
+
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* ===================== MOBILE BUTTON ===================== */}
           <button
             className="md:hidden text-foreground p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -67,23 +76,18 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ===================== MOBILE MENU (UNCHANGED) ===================== */}
       <div
         className={`md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-sm border-b border-border/30 transition-all duration-300 ${
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
         <div className="px-6 py-8 flex flex-col gap-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-lg text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          <a href="/" onClick={() => setIsMobileMenuOpen(false)}>Technology</a>
+          <a href="/about" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+          <a href="/team" onClick={() => setIsMobileMenuOpen(false)}>Team</a>
+          <a href="/careers" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+          <a href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
         </div>
       </div>
     </nav>

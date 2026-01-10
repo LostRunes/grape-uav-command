@@ -6,22 +6,22 @@ const AutonomousDock = () => {
   {
     title: 'Precision Landing',
     description: 'AI-guided landing system ensures accurate docking in adverse weather conditions and low visibility.',
-    video: '/landing.mp4',
+    //video: '/landing.mp4',
   },
   {
     title: 'Instant Battery Swap',
     description: 'Automated mechanism replaces depleted batteries with fully charged units in under 90 seconds.',
-    video: '/battery.mp4',
+    //video: '/battery.mp4',
   },
   {
     title: 'Autonomous Launch',
     description: 'Pre-programmed mission execution with adaptive route planning based on real-time conditions.',
-    video: '/launch.mp4',
+    //video: '/launch.mp4',
   },
   {
     title: 'All-Weather Housing',
     description: 'Military-grade enclosure protects drone and equipment from dust, rain, and extreme temperatures.',
-    video: '/weather.mp4',
+    //video: '/weather.mp4',
   },
 ];
 
@@ -69,7 +69,7 @@ const AutonomousDock = () => {
       <HoverCard
   title={feature.title}
   description={feature.description}
-  videoSrc={feature.video} // 🔥 REQUIRED
+  //videoSrc={feature.video} // 🔥 REQUIRED
   className="bg-card border border-border/30 min-h-[380px]"
 />
 
