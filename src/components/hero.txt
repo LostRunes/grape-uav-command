@@ -1,0 +1,109 @@
+import { useEffect, useState } from "react";
+
+const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-background-black">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          {/* LEFT — Text Content */}
+          {/* <div className="text-left"> */}
+  <div className="text-left max-w-none scale-[1.15] origin-left">
+
+  {/* Title */}
+  <svg
+    viewBox="0 0 1200 400"
+    className="w-full h-auto max-w-5xl"
+    aria-label="Keep Drones Flying 24/7"
+  >
+    <text
+      x="0"
+      y="45%"
+      textAnchor="start"
+      className="hero-stroke-text"
+    >
+      Keep Drones Flying.
+    </text>
+
+    <text
+      x="0"
+      y="90%"
+      textAnchor="start"
+      className="hero-stroke-text hero-stroke-text--large"
+    >
+      24/7.
+    </text>
+  </svg>
+
+  {/* Accent Line */}
+  <div
+    className={`accent-line mt-8 mb-8 opacity-0 ${
+      isLoaded ? "animate-line-reveal delay-300" : ""
+    }`}
+  />
+
+  {/* Subtitle */}
+  <p
+    className={`max-w-2xl text-base md:text-lg text-muted-foreground mb-12 opacity-0 ${
+      isLoaded ? "animate-fade-up delay-400" : ""
+    }`}
+  >
+    Autonomous dock with instant battery swapping for continuous
+    overwatch, rapid dispatch, and evidence-grade visibility —
+    engineered and built in India.
+  </p>
+
+  {/* CTAs */}
+  <div
+    className={`flex flex-col sm:flex-row gap-8 items-start opacity-0 ${
+      isLoaded ? "animate-fade-up delay-600" : ""
+    }`}
+  >
+    <a
+      href="#dock"
+      className="btn-primary text-base px-10 py-4 animate-float-slow"
+    >
+      Explore the Dock
+    </a>
+
+    <a
+      href="#careers"
+      className="btn-outline text-base px-10 py-4 animate-float-slow delay-200"
+    >
+      View Open Roles
+    </a>
+  </div>
+
+</div>
+
+
+          {/* RIGHT — Logo Video */}
+          <div className="relative w-full h-[360px] md:h-[480px] rounded-2xl overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="absolute inset-0 w-full h-full object-contain"
+            >
+              <source src="/herologo.mp4" type="video/mp4" />
+            </video>
+
+            {/* subtle overlay */}
+            <div className="absolute inset-0 bg-black/10" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

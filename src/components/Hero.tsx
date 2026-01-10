@@ -10,9 +10,9 @@ const Hero = () => {
   return (
    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background Placeholder */}
-      <div className="absolute inset-0 bg-background-deep">
+      <div className="absolute inset-0 bg-background-black">
         {/* Video element - placeholder for hero.mp4 */}
-       <video
+       {/* <video
   autoPlay
   loop
   muted
@@ -22,7 +22,7 @@ const Hero = () => {
   className="absolute inset-0 w-full h-full object-cover opacity-90"
 >
   <source src="/hero.mp4" type="video/mp4" />
-</video>
+</video> */}
 
 <div className="absolute inset-0 bg-black/15" />
 

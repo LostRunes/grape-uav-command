@@ -6,7 +6,7 @@ const CoreTeam = () => {
 const team = [
   {
     name: 'Santrupta Mishra',
-    role: 'Co-Founder',
+    role: 'Founder',
     bio: 'Leading hardware and systems integration.',
     image: '/team/santrupta.jpeg',
   },

@@ -12,6 +12,7 @@ import OpenRoles from "./pages/OpenRoles";
 import AboutPage from "./pages/AboutPage";
 import TeamPage from "./pages/TeamPage";
 import CareersPage from "./pages/CareersPage";
+import AdvisorPage from "./pages/AdvisorPage";
 
 import MainLayout from "./layouts/MainLayout";
 import ContactPage from "./pages/ContactPage";
@@ -36,6 +37,7 @@ const App = () => (
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/team" element={<TeamPage />} />
+         <Route path="/advisors" element={<AdvisorPage />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/careers/open-roles" element={<OpenRoles />} />
         <Route path="/contact" element={<ContactPage />} />

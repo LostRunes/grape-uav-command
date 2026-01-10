@@ -6,6 +6,7 @@ import NavItem from './navigation/NavItem';
 import CompanyDropdown from './navigation/CompanyDropdown';
 import TeamDropdown from './navigation/TeamDropdown';
 import CareersDropdown from './navigation/CareersDropdown';
+import ContactDropdown from './navigation/ContactDropdown';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,10 +60,14 @@ const Navigation = () => {
               <CareersDropdown />
             </NavItem>
 
+             <NavItem label="Contact">
+              <ContactDropdown />
+            </NavItem>
+
             {/* 🔹 NORMAL links stay simple */}
            
             {/* <NavItem label="Careers" href="/careers" /> */}
-            <NavItem label="Contact" href="/contact" />
+            {/* <NavItem label="Contact" href="/contact" /> */}
 
           </div>
 

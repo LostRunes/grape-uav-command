@@ -10,7 +10,7 @@ export default function CompanyDropdown() {
           </h4>
           <ul className="space-y-3">
             <li><a href="/about">+ About</a></li>
-            <li><a href="/vision">+ Vision</a></li>
+            <li><a href="/about#items">+ Vision</a></li>
             <li><a href="/careers">+ Careers</a></li>
           </ul>
         </div>
