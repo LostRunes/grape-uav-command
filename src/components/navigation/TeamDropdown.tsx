@@ -17,11 +17,13 @@ export default function TeamDropdown() {
 
         <div>
           <h4 className="mb-4 text-xs tracking-widest opacity-50">
-            MEDIA
+              About Us
           </h4>
           <ul className="space-y-3">
-            <li>+ Newsroom</li>
-            <li>+ Press</li>
+            <li>A small, focused team
+of engineers and advisors
+driven by systems thinking</li>
+            {/* <li>+ Press</li> */}
           </ul>
         </div>
       </div>

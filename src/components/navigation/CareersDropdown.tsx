@@ -6,7 +6,7 @@ export default function CareersDropdown() {
       <div className="grid grid-cols-2 gap-10 text-sm">
         <div>
           <h4 className="mb-4 text-xs tracking-widest opacity-50">
-            COMPANY
+            CAREERS
           </h4>
           <ul className="space-y-3">
             <li><a href="/about">+ Roles</a></li>
@@ -17,11 +17,13 @@ export default function CareersDropdown() {
 
         <div>
           <h4 className="mb-4 text-xs tracking-widest opacity-50">
-            MEDIA
+            About Us
           </h4>
           <ul className="space-y-3">
-            <li>+ Newsroom</li>
-            <li>+ Press</li>
+            <li>GrapeUAV is a deep-tech company
+building autonomous drone
+infrastructure for 24/7 operations</li>
+            {/* <li>+ Press</li> */}
           </ul>
         </div>
       </div>

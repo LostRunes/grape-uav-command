@@ -17,11 +17,12 @@ export default function CompanyDropdown() {
 
         <div>
           <h4 className="mb-4 text-xs tracking-widest opacity-50">
-            MEDIA
+            Focus
           </h4>
           <ul className="space-y-3">
-            <li>+ Newsroom</li>
-            <li>+ Press</li>
+            <li>Autonomy</li>
+            <li>Reliablity</li>
+            <li>Deployment</li>
           </ul>
         </div>
       </div>
